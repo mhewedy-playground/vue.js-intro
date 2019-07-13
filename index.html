@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .color-box {
+            width: 35px;
+            height: 35px;
+            margin: 0 5px 5px 0;
+        }
+
+        .tab {
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0 10px 0 10px;
+        }
+
+        .active {
+            background-color: #e7ffee;
+        }
+
+        .tab-content {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="row" style="float: right; margin-right: 100px">
+        <div>Cart ({{ cart.length }})</div>
+    </div>
+    <div class="row">
+        <product :premium="premium" :cart="cart"
+                 @add-to-cart="addToCart"
+                 @remove-from-cart="removeFromCart"></product>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
